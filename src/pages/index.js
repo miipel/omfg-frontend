@@ -1,21 +1,29 @@
 import React from "react"
-import { Link } from "gatsby"
+
+import { Area } from "salad-ui.chart"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import "bulma/css/bulma.css"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const chartData = [
+  { time: new Date("2019-04-12"), value: 2 },
+  { time: new Date("2019-04-13"), value: 4 },
+  { time: new Date("2019-04-14"), value: 8 },
+  { time: new Date("2019-04-15"), value: 16 },
+  { time: new Date("2019-04-16"), value: 32 },
+  { time: new Date("2019-04-17"), value: 64 },
+  { time: new Date("2019-04-18"), value: 128 },
+  { time: new Date("2019-04-19"), value: 264 },
+]
+
+const IndexPage = () => {
+  return (
+    <Layout>
+      <Area width={900} height={300} data={chartData} />
+      <SEO title="Home" keywords={[`optimal`, `moment`, `gaming`]} />
+    </Layout>
+  )
+}
 
 export default IndexPage
