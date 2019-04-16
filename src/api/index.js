@@ -1,12 +1,22 @@
 export const sendData = async data => {
-  console.log(data)
-  return await fetch("http://localhost:3001/", {
+  const userData = {
+    userId: "ASDSF",
+    data: {
+      timeStamp: new Date(),
+      accuracy: data.accuracy,
+      averageReactionTime: data.averageReactionTime,
+      memoryTestGrade: data.memoryTestGrade,
+      diaryEntry: data.diaryEntry,
+    }
+  }
+  console.log(userData)
+  return await fetch("https://riski.business/benchmark", {
     method: "POST",
     mode: "cors",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(userData),
   })
 }
 
