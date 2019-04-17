@@ -20,7 +20,6 @@ const Feedback = () => {
     diaryEntry: "",
   })
   const onSubmit = () => api.sendData(state).then(console.log)
-  console.log(state)
   return (
     <div>
       <Title>Play Top Frag score</Title>
